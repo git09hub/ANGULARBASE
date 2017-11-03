@@ -1,0 +1,28 @@
+<h2>multi radio.{{5+4}}</h2>
+
+ <div class="col-md-12">
+	
+	<div class="form-group radio col-md-3">
+		Select Type :
+    	<label>
+       		<input type="radio" name="address" ng-model="user.type" value="new"/>
+       			New
+    	</label>
+    	<label>
+       		<input type="radio" name="address" ng-model="user.type" value="existing"/>
+       			Existing
+    	</label>
+    </div>
+    
+    
+    <div class="form-group radio col-md-6" ng-show="user.type=='present'">	
+	<h3 style="color:red">New User</h3>	
+  		data
+	</div>
+	
+	<div class="form-group radio col-md-6" ng-show="user.type=='present'">	
+	<h3 style="color:red">Existing User</h3>	
+  		data
+	</div>
+	
+</div>

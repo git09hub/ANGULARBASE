@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+	span{color: red;}
+	input.ng-dirty {background-color: lightblue;}	
+</style>
+</head>
+<br/>
+<body>
+<div  style="padding: 10px;text-align: center;">
+<form name="f">
+<table align="center">
+
+<span ng-show="f.$pristine && f.$submitted">*All Fields are mandatory</span><br>
+<!-- <span ng-show="f.sname.$untoched && f.$submitted ">Need name to register</span> -->
+<tr><td>Student Name:</td><td><input type="text" name="sname" ng-model="s.name"></td><td><span ng-show=" f.sname.$pristine && f.$submitted">Name should not be empty</span></td></tr>
+
+<tr><td>Student age:</td><td><input type="text" name="age" ng-model="s.age"></td><td><span ng-show="f.age.$pristine && f.$submitted">Need age to register</span></td></tr>
+
+<tr><td>Mobile:</td><td><input type="text" name="mobile" ng-model="s.mobile"></td><td><span ng-show="f.mobile.$pristine && f.$submitted">Need mobile to register</span></td></tr>
+
+<tr><td>Address:</td><td><input type="address" name="address" ng-model="s.address"></td><td><span ng-show="f.address.$pristine && f.$submitted">Need address to register</span></td></tr>
+
+<tr><td>Email: </td><td><input type="email" name="email" ng-model="s.email"></td><td><span ng-show="f.email.$pristine && f.$submitted">Need email to register</span></td></tr>
+
+
+<tr>
+<td><button class="btn btn-success" ng-model="register">Save</button></td></tr>
+<!-- <tr><td><input type="submit" ng-model="register" value="Register" ng-click="saveStudent(s)"/></td></tr> -->
+</table>
+</form>
+</div>
+<br><br>
+<div>
+	<table class="TableStyle" style="padding: 30px" border=2 align="center">
+            <tr><th colspan=5 style="text-align: center;">Static Users List</th></tr>
+            <tr  class="RowHeaderStyle">
+                <th>name</th>
+                <th>age</th>	
+                <th>mobile</th>
+                <th>address</th>
+                <th>email</th>
+            </tr>
+            <tr class="RowStyle">                
+                <td >{{s.name}}</td>
+                <td >{{s.age}}</td>
+                <td >{{s.mobile}}</td>
+                <td >{{s.address}}</td>
+                <td >{{s.email}}</td>
+                <!-- <td><button class="btn btn-mini btn-success" ng-click="editUser(user)">Edit</button></td>                  
+                <td><a ng-href="#/editUser/{{user}}">Edit</a>-->   
+                </td>
+            </tr>
+        </table>	
+</div>
+<br/><br/>
+
+<div ng-show="register">
+	<table class="TableStyle" style="padding: 30px" border=2 align="center">
+            <tr><th colspan=5 style="text-align: center;">Users List</th></tr>
+            <tr  class="RowHeaderStyle">
+                <th>name</th>
+                <th>age</th>	
+                <th>mobile</th>
+                <th>address</th>
+                <th>email</th>
+            </tr>
+            <tr class="RowStyle">                
+                <td >{{student.name}}</td>
+                <td >{{student.age}}</td>
+                <td >{{student.mobile}}</td>
+                <td >{{student.address}}</td>
+                <td >{{student.email}}</td>
+                <!-- <td><button class="btn btn-mini btn-success" ng-click="editUser(user)">Edit</button></td>                  
+                <td><a ng-href="#/editUser/{{user}}">Edit</a>-->   
+                </td>
+            </tr>
+        </table>	
+</div>
+
+
+</body>
+</html>

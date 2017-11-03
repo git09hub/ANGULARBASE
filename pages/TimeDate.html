@@ -1,0 +1,46 @@
+<!-- timeDate page-->
+      <hr>
+   <div class="container">
+
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+
+			<h1>Popup Timepicker Demo</h1>
+
+			<div class='well'>
+				<form name='form' class='form-horizontal' role='form'>
+
+					<div class='form-group'>
+						<label class='col-sm-3 control-label'>Timepicker</label>
+						<div class='col-sm-9'>
+							<timepicker ng-model="mytime" show-meridian='showMeridian'/>
+						</div>
+					</div>
+
+					<div class='form-group'>
+						<label class='col-sm-3 control-label'>Popup Timepicker</label>
+						<div class='col-sm-4'>
+							<timepicker-pop input-time="mytime" class="input-group"
+								show-meridian='showMeridian'> </timepicker-pop>
+						</div>
+					</div>
+
+					<div class='form-group'>
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+								<label> <input type="checkbox" name='showMeridian' ng-model='showMeridian' />
+									Show meridian ({{showMeridian}})
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class='form-group'> 
+						<div class="col-sm-offset-3 col-sm-9">Value: {{mytime | date: 'shortTime'}}</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="col-md-2"></div>
+	</div>

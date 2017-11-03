@@ -1,0 +1,9 @@
+<!--ngMultiSelected-->
+
+<label class="item item-input item-select">
+
+     <select multiple ng-model='selectedValues'
+                    ng-options="a.name for a in values" >
+     </select>
+</label>
+{{selectedValues}}

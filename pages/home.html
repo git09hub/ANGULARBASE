@@ -1,0 +1,164 @@
+<div class="col-md-12">
+	<h2>One time binding:The new syntax adds :: in front of any values, which declares we want one time binding</h2>
+		<input type="text" ng-model="name"/>
+		{{::name}}
+</div>
+<div class="col-md-12">
+	<div class="form-group col-md-3">	
+	<select id="Id" class="form-control js-example-basic-single " 
+			ng-model="data.country"
+			name="Id" 
+			ng-change="switchCountry(data.country)" required>
+			<option value="">Select Contry</option>			
+			<option value="india">India</option>			
+			<option value="us">Us </option>
+		</select>
+	</div>
+
+	<div class="form-group col-md-3">
+		<select id="Id" class="form-control js-example-basic-single "
+			data-ng-model="data.stateId"
+			ng-options="s.Id as s.name for s in stateList"
+			name="Id" required>
+			<option value="">Select State</option>
+		</select>
+	</div>
+</div>
+<div class="col-md-12">
+	<div class="form-group radio col-md-3">
+	Select Context :
+    <label>
+       <input type="radio" name="address" ng-model="data.address" value="present"/>
+       Scope
+    </label>
+    <label>
+       <input type="radio" name="address" ng-model="data.address" value="permanent"/>
+       	Binding
+    </label>
+    
+    <label>
+       <input type="radio" name="address" ng-model="data.address" value="taraq"/>
+       	taraq
+    </label>
+    
+    <label>
+       <input type="radio" name="address" ng-change="radioCountry('india')" ng-model="data.state" value="india"/>
+       	India
+    </label>
+    
+    <label>
+       <input type="radio" name="address" ng-change="radioCountry('us')" ng-model="data.state" value="us"/>
+       	us
+    </label>
+    
+    <label>
+       <input type="checkbox" name="address" ng-change="radioCountry(data.state)" ng-model="data.state" ng-true-value="'india'" ng-false-value="'us'" />
+       	us
+    </label>
+    <br/><br/>
+   <!--   <label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
+		Show when checked:
+		<span ng-if="checked" class="animate-if">
+  			This is removed when the checkbox is unchecked.
+		</span>-->
+	<br/><br/>	
+	<label>To hide the division using ng-hide/ng-show animations</label>
+	Show....<input type="checkbox" ng-model="myCheck"/>
+	<div ng-show="myCheck">Its is an animation</div>
+	<br/><br/><br/>
+	<label>Shopping List</label><br/><br/>
+	
+	<ul>
+        <li ng-repeat="x in products">
+            {{x}}
+            <button ng-click="removeItem($index)">&times;</button>
+        </li>
+    </ul>
+    
+    <input ng-model="addMe">
+    <button ng-click="addItem()">Add</button>
+    <p>{{errortext}}</p>
+	
+	
+	</div>
+</div>
+
+<div class="col-md-12">
+	<div class="form-group radio col-md-6" ng-show="data.address=='present'">	
+	<h3 style="color:red">Scope</h3>	
+  Angular uses the term “scope” in a manner akin to the fundamentals of computer science.
+Scope in computer science describes when in the program a particular binding is valid. 
+The ECMA-262 specification defines scope as: a lexical environment in which 
+a Function object is executed in client-side web scripts;[3] akin to how scope is defined in lambda calculus.
+[4]In Angular, “scope” is a certain kind of object[5] that itself can be in scope or out of 
+scope in any given part of the program, following the usual rules of variable scope in JavaScript like any other object.
+[6] When the term “scope” is used below, it refers to the Angular scope object and not the scope of a name binding.
+	</div>
+	
+	<div class="form-group radio col-md-6" ng-show="data.address=='permanent'">	
+	<h3 style="color:green">Two way Binding</h3>	
+           AngularJS' two-way data binding is its most notable feature, largely 
+           relieving the server backend of templating responsibilities. Instead, templates are rendered in plain HTML according to data contained in a scope defined in the model. The $scope service in Angular detects changes to the model section and modifies HTML expressions in the view via a controller. Likewise, any alterations to the view are reflected in the model. This circumvents the need to actively manipulate the DOM and encourages bootstrapping and rapid prototyping of web applications.[8] AngularJS detects changes in models by comparing the current values with values stored earlier in a process of dirty-checking, 
+           unlike Ember.js and Backbone.js that trigger listeners when the model values are changed.[9]
+	</div>	
+	
+	<div class="form-group radio col-md-6" ng-show="data.address=='taraq'" >	
+	<h3 style="color:red">About Me</h3>	
+           Me...	           
+	</div>
+	
+	<div class="form-group radio col-md-6" ng-show="data.state=='us'"><!--  ng-show="switchCountry('india')"> -->	
+		<h3 style="color:red">About {{data.address}}</h3>	
+           ...INDIA...
+        <table class="TableStyle" style="padding: 50px" border=2 align="center">            
+            <tr  class="RowHeaderStyle">
+                <th>ID</th>
+                <th>States</th>                
+            </tr>
+            <tr ng-repeat="user in states">                
+                <td >{{user.Id}}</td>
+                <td >{{user.name}}</td>
+            </tr>
+        </table>
+	</div>	
+	
+	<div class="form-group radio col-md-6" ng-show="data.state=='india'">	
+	<h3 style="color:red">About {{data.state}}</h3>
+	           us...           
+           <table class="TableStyle" style="padding: 50px" border=2 align="center">            
+            <tr  class="RowHeaderStyle">
+                <th>check</th>
+                <th>ID</th>
+                <th>States</th>                
+            </tr>
+            <tr ng-repeat="state in states">                
+                <td><input id="{{state.name}}" value="{{state.name}}" type="checkbox" ng-checked="selection.indexOf(state.name) > -1"  ng-click="toggleSelection(state.name)"/></td>
+                <td>{{state.Id}}</td>
+                <td>{{state.name}}</td>
+            </tr>
+        </table>   
+	</div>
+	
+	<div>
+		<span>Selected Items:</span>
+			<div ng-repeat="name in selection"> 
+			  {{name}}
+			 </div>
+			
+			<div>
+				<span class="glyphicon glyphicon-screenshot mapbtn-inact"></span>
+			</div>
+	</div>
+</div>
+
+
+<div 	
+		ng-dropdown-multiselect=""
+	 	options="example14data" 
+	 	selected-model="example14model" 
+	 	checkboxes="true" 
+	 	extra-settings="example14settings">
+</div> 
+
+<pre>Selected Model: {{example14model}} | json</pre>
+

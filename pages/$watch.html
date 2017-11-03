@@ -1,0 +1,23 @@
+<h3>$watch Example</h3>
+<h4>The $scope.watch() function creates a watch of some variable. 
+	When you register a watch you pass two functions as parameters to the $watch() function:
+	<br/>--> A Value function
+	<br/>--> A Listener function
+</h4>
+<br/>
+The variable binded to span: <span ng-bind="variable=9">{{variable}}</span><br/>
+<input type="text" ng-model="inputVar"/>
+<br/><br/>When the input value is changed then count increased using $watch
+<input type="text" ng-model="v"/>
+<br/>changeCount....{{c}}
+<br/><br/><br/>
+<div ng-repeat="a in b">
+     <input type="text" ng-model="a.value"/>{{a.value}}
+</div>
+<br/>
+values count..{{count}}
+<br/>
+values in array...{{b}}
+------------------------{{total}}
+<br/><br/><br/>input value not equal to old value...{{inputChange}}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJavaProject</title>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    -->
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="resources/bs/css/bootstrap-theme.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="resources/bs/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- <script src="resources/js/angular.js"></script> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> -->
+  <!-- <script src="https://code.angularjs.org/snapshot/angular.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+
+  <!-- <script src="resources/js/angular.min.js"></script> -->
+  <script src="resources/js/angular-route.js"></script>
+  <script src="resources/js/angular-route.min.js"></script>
+  <!-- all navigations are configured in app.js -->
+  <script src="resources/app/app.js"></script>
+  <script src="resources/app/ngCheckList.js"></script>
+  <!-- this is specific for the actions of module home -->
+  <script src="resources/app/HomeController.js"></script>
+  <!-- this is specific for the actions of module user -->
+  <script src="resources/app/UserController.js"></script>
+  <script src="resources/app/LoginController.js"></script>
+  <script src="resources/app/services.js"></script>
+  <script src="resources/app/editController.js"></script>
+  <script src="resources/app/JStudentController.js"></script>
+  <script src="resources/app/workOutController.js"></script>
+  <script src="resources/app/customValidation.js"></script>
+
+  <script src="resources/app/ngcssController.js"></script>
+  <script src="resources/app/$watchController.js"></script>
+  <script src="resources/app/$watchDigestApplyController.js"></script>
+  <!-- ServicesController -->
+  <script src="resources/app/ServicesController.js"></script>
+  <script src="resources/app/MathService.js"></script>
+  <script src="resources/app/MultiImageUploadController.js"></script>
+  <script src="resources/app/AngularForEachController.js"></script>
+  <script src="resources/app/accordionsController.js"></script>
+  <script src="resources/app/chartsngraphsController.js"></script>
+  <!--<script src="resources/app/checklist-model.js"></script>-->
+
+  <!--for charts-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <!--for charts-->
+  <script src="resources/app/modalController.js"></script>
+
+  <!--timeDate-->
+  <script src="resources/app/timeDateController.js"></script>
+  <script src="resources/app/imgSliderController.js"></script>
+  <script src="resources/app/checkListController.js"></script>
+  <script src="resources/app/shareBetweenPagesController.js"></script>
+
+  <!-- multi selected in drop down in ng-selected-->
+  <script src="resources/app/ngMultiSelectedController.js"></script>
+
+  <!--Image compression code-->
+  <script src="resources/app/ImageCompressionController.js"></script>
+
+  <!--Angular Image Compression -->
+  <script src="resources/app/AngularImageCompressionController.js"></script>
+
+  <script src="resources/app/nestedFilterController.js"></script>
+
+  <script src="resources/app/uploadToFolderController.js"></script>
+
+  <script src="resources/app/componentsController.js"></script>
+
+  <script src="resources/app/directives.js"></script>
+
+  <script src="resources/js/ng-img-crop.js"></script>
+
+  <link rel="stylesheet" type="text/css"
+        href="resources/css/ng-img-crop.css">
+
+  <script src="resources/app/imageCropController.js"></script>
+
+  <!-- using angular ui router for sharing data between controller -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
+
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <script src="resources/scripts/binaryajax.js"></script>
+  <script src="resources/scripts/exif.js"></script>
+  <script src="resources/scripts/canvasResize.js"></script>
+</head>
+
+<body>
+  <h1>Angular App</h1>
+  <div class=" navbar-collapse" align="center">
+    <ul class="nav navbar-nav navbar-middle header-hide">
+      <li><a class="navbar-links" href="#/home" id="dashboard">Home</a></li>
+      <li><a class="navbar-links" href="#/user" id="dashboard">Add</a></li>
+      <li><a class="navbar-links" href="#/view" id="dashboard">View</a></li>
+      <li><a class="navbar-links" href="#/login" id="dashboard">Login</a></li>
+      <li><a class="navbar-links" href="#/jaddStudent" id="dashboard">JAdd</a></li>
+      <li><a class="navbar-links" href="#/jviewStudents" id="dashboard">JView</a></li>
+      <li><a class="navbar-links" href="#/Shop" id="dashboard">Shop</a></li>
+      <li><a class="navbar-links" href="#/workOut" id="dashboard">WorkOut</a></li>
+      <li><a class="navbar-links" href="#/customValidation" id="dashboard">CustomValidation</a></li>
+      <li><a class="navbar-links" href="#/ngcss" id="dashboard">NG+CSS</a></li>
+      <li><a class="navbar-links" href="#/multiRadio" id="dashboard">multiRadio</a></li>
+      <li><a class="navbar-links" href="#/$watch" id="$watch">$watch</a></li>
+      <li><a class="navbar-links" href="#/$watchDigestApply" id="$watch">$watchDigestApply</a></li>
+      <li><a class="navbar-links" href="#/services" id="services">services</a></li>
+      <li><a class="navbar-links" href="#/multiImgUpload" id="services">Multiple Image</a></li>
+      <li><a class="navbar-links" href="#/AngularForEach" id="services">Angular For Each</a></li>
+      <li><a class="navbar-links" href="#/accordions" id="services">Accordion</a></li>
+      <li><a class="navbar-links" href="#/charts" id="charts and graphs">Charts</a></li>
+      <li><a class="navbar-links" href="#/modal" id="charts and graphs">MODAL</a></li>
+      <!--timeDate-->
+      <li><a class="navbar-links" href="#/timeDate" id="charts and graphs">TIMEnDATE</a></li>
+      <li><a class="navbar-links" href="#/imgSlider" id="Image Slider">Img-Slider</a></li>
+      <li><a class="navbar-links" href="#/checkList" id="Image Slider">Chcek-List</a></li>
+      <li><a class="navbar-links" href="#/shareBetweenPages" id="Share Data1">Share1</a></li>
+      <li><a class="navbar-links" href="#/shareData" id="Share Data2">Share2</a></li>
+      <li><a class="navbar-links" href="#/ngMultiSelected" id="Share Data2">ng-multi-selected</a></li>
+      <li><a class="navbar-links" href="#/imageCompression" id="Share Data2">Image Compression</a></li>
+      <li><a class="navbar-links" href="#/AngularImageCompression" id="Share Data2">Angular Image Compression</a></li>
+      <li><a class="navbar-links" href="#/NestedFilters" id="Share Data2">Nested Filters</a></li>
+      <li><a class="navbar-links" href="#/imageCrop" id="Share Data2">Image Crop</a></li>
+      <li><a class="navbar-links" href="#/uploadToFolder" id="Share Data2">UploadToFolder</a></li>
+      <li><a class="navbar-links" href="#/components" id="Share Data2">Components</a></li>
+    </ul>
+  </div>
+  <!-- <div class="main" ng-view> -->
+  <ng-view></ng-view>
+</body>
+
+</html>

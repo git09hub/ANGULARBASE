@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>All Users</title>
+</head>
+<body>
+		<br/>
+		<div align="center">
+		<!-- Sort by:
+		<select ng-change="sortBy(sort)">
+			<option ng-model="sort">Name</option>
+			<option ng-model="sort">Email</option>
+			<option ng-model="sort">Address</option>
+		</select>
+		 -->
+		<br/><br/>
+		Search
+			<select name="sCriteria">
+						<option>Select</option>
+						<option value="firstName">name</option>
+						<option value="email">E-Mail</option>
+						<option value="address">Address</option>
+				</select>
+
+		<input type="text" ng-model="searchItem"/>
+		<br/>
+		<br/>
+		Order By
+		<select name="sCriteria" ng-model="sC">
+						<option>Select</option>
+						<option value="firstName">name</option>
+						<option value="email">E-Mail</option>
+						<option value="address">Address</option>
+				</select>
+				<br/><br/>
+<!-- <p style="font-size: large" >Total user count: {{user.length}}   </p> -->
+
+        <table class="TableStyle" style="padding: 30px" border=2 align="center">
+            <tr><th colspan=5 style="text-align: center;">Users List</th></tr>
+						<tr><th colspan=2><hr/></th></tr>
+            <tr  class="RowHeaderStyle">
+                <th ng-click="orderByMe('firstName')">Firstname</th>
+                <th>Lastname</th>
+                <th ng-click="orderByMe('email')">E-mail</th>
+                <th ng-click="orderByMe('address')">Address</th>
+                <th>Update</th>
+            </tr>
+            <tr ng-repeat="user in userList | filter: searchItem | orderBy: sC"><!-- | filter: {firstName: 'taraq' } > -->
+            <!-- <tr ng-repeat="user in userList | filter:searchItem"> -->
+                <td >{{user.firstName}}</td>
+                <td >{{user.lastName}}</td>
+                <td >{{user.email}}</td>
+                <td >{{user.address}}</td>
+                <!-- <td><input type="checkbox" ng-model="dataDisplay"></td> -->
+                <td><button class="btn btn-mini btn-success" ng-click="editUser(user)" ng-model="dataDisplay">Edit</button></td>
+                <!--<td><a ng-href="#/editUser/{{user}}">Edit</a>-->
+                </td>
+            </tr>
+        </table>
+
+        </div>
+<br><br>
+<div ng-show="dataDisplay">
+KKKK
+<!-- 	First Name:<input type="text" ng-model="firstName"><br><br>
+	Last Name:<input type="text" ng-model="lastName"><br><br>
+	Email id:<input type="email" ng-model="email"><br><br>
+	Address:<input type="address" ng-model="address">
+ --></div>
+
+</body>
+</html>

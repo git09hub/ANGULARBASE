@@ -1,0 +1,45 @@
+<!-- Nested Filters -->
+
+<!-- <div>
+<h3>Nested Filters</h3>
+<br/>
+<input type="text" ng-model="search"/>
+<br>
+<ul>
+<div ng-repeat="object in finalObject">
+  <li>{{object.name}}</li>
+</div>
+
+<br/>
+<h3>Filtered</h3>
+<ul>
+  <li ng-repeat="item in items">
+    {{item | json}}
+  </li>
+</ul>
+</div> -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  categoryItemsDet " id="{{alaCategoryTypeDet.id}}" ng-repeat="alaCategoryTypeDet in alaCategoryType" >
+    <div class="categoryItemsAla" ng-mouseover="activeClass(alaCategoryTypeDet.id)"  ng-if="alaCategoryTypeDet.items.length>0 && alaCategoryTypeDet.name!='Recommended'">
+        <div>Enter{{filteredEntries.length}}</div>
+        <div class="CatNamehilight1" ng-show="!filteredEntries | filteredEntries.length==0 " ng-bind-html="alaCategoryTypeDet.name | highlight:search" ></div>
+        <div class="CatNamehilight1" ng-show="filteredEntries.length>0" ng-bind-html="alaCategoryTypeDet.name | highlight:search" ></div>
+        <table class="categoryItemsAlaTable table-hover"  ng-if="alaCategoryTypeDet.name!='Recommended'" >
+            <tr ng-repeat="patCategoryDet in filteredEntries = (alaCategoryTypeDet.items | filter:{name: search})">
+                <td style="width:50px;" >
+                    <img style="width:20px;" ng-if="patCategoryDet.subCategoryname=='Veg'" src="Alacarte/icons/veg_48.png"/>
+                    <img style="width:20px;" ng-if="patCategoryDet.subCategoryname=='Non veg'" src="Alacarte/icons/nonveg_48.png"/>
+                </td>
+                <!--<td style="width:50px;" ><img style="width:32px;" ng-if="patCategoryDet.subCategoryId=='58f0a67c2172c462464bd887'" src="Alacarte/icons/nonveg_48.png"/></td>-->
+                <td style="width:265px;" ng-bind-html="patCategoryDet.name | highlight:search.name"></td>
+                <!-- <td style="width:100px;text-align:right;"><i class="fa fa-inr" aria-hidden="true"></i> {{patCategoryDet.onedayprice | number:2}}</td>-->
+                <td style="padding-left:15px;"><i class="fa fa-inr" aria-hidden="true"></i></td>
+                <td  style="text-align:right;padding-left:5px;width:50px;"> {{patCategoryDet.onedayprice | number:2}}</td>
+                <td ng-if="!patCategoryDet.addtoCart" style="width:150px;text-align:center"><img src="Alacarte/icons/increment_2_32.png" style="width:22px;" ng-click="alacarteaddToCart(patCategoryDet)"></td>
+                <td ng-if="patCategoryDet.addtoCart" style="width:150px;text-align:center"><img src="Alacarte/icons/added.png" style="width:22px;"></td>
+
+
+            </tr>
+
+        </table>
+    </div>
+</div>
